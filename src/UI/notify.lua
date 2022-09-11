@@ -1,11 +1,14 @@
 local Rocky = script:FindFirstAncestor("Rocky")
+local Thread = require(Rocky.utils.Thread)
+local Loading = require(Rocky.utils.maidv)
+local LoadingMaid = Loading:GetMaid()
 
 local Notifications = {}
 
 function Notifications:Notify(M,R,G,B)
     spawn(function()
 		repeat wait() until not NOTIFY_1
-		local NOTIFY_SETH = GUIS.notify_seth:Clone() NOTIFY_SETH.Parent = game.CoreGui
+		local NOTIFY_SETH = game.CoreGui.Rocky2U.notify_seth:Clone()
 		if NOTIFY_SETH then
 			NOTIFY_SETH.notify[''].BackgroundColor3 = C3(R, G, B)
 			NOTIFY_SETH.notify.text.Text = ' ' .. M
