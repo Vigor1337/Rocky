@@ -27,3 +27,5 @@ function Notifications:Notify(M,R,G,B)
 		NOTIFY_2 = false
 	end)
 end
+
+return Notifications
