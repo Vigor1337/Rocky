@@ -8,9 +8,11 @@ local Notifications = {}
 function Notifications:Notify(M,R,G,B)
     spawn(function()
 		repeat wait() until not NOTIFY_1
-		local NOTIFY_SETH = game.CoreGui.Rocky2U.notify_seth:Clone()
+		local NOTIFY_SETH = game.CoreGui.Rocky["notify_seth"]:Clone()
+		NOTIFY_SETH.Parent = game.CoreGui.Rocky
+		NOTIFY_SETH.Name = "what"
 		if NOTIFY_SETH then
-			NOTIFY_SETH.notify[''].BackgroundColor3 = C3(R, G, B)
+			NOTIFY_SETH.notify[''].BackgroundColor3 = Color3.new(R, G, B)
 			NOTIFY_SETH.notify.text.Text = ' ' .. M
 			repeat wait() until not NOTIFY_1
 			NOTIFY_1 = true
