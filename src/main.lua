@@ -1,17 +1,14 @@
 local Rocky = script:FindFirstAncestor("Rocky")
 local ST = os.clock()
-local UI = require(Rocky.UI.notify)
+local UI = require(Rocky.UI.ui)
+local Noti = require(Rocky.UI.notify)
 
 local Main = {}
 
-local notify = function(Message)
-    UI:Notify(Message)
-end
-
 function Main:Init()
-    UI:Init()    
-    notify("How!!")
+    UI:Init()
+    Noti:Notify('Hello, ' .. game:GetService("Players").LocalPlayer.Name, 255, 255, 255)
+    Noti:Notify('Script loaded!', 50, 255, 50)
 end
-
 
 return Main
